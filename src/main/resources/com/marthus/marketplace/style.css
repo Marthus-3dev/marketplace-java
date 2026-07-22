@@ -1,0 +1,22 @@
+.campos-login{
+    -fx-border-color :  #c8412d;
+    -fx-background-radius : 8   ;
+    -fx-border-radius : 8;
+}
+
+.cores-omni-btn{
+    -fx-background-color : #c8412d;
+    -fx-background-radius : 8;
+    -fx-border-radius : 8;
+}
+
+.login-marketplace{
+    -fx-background-color : #e1ebed;
+    -fx-text-fill : #c8412d;
+}
+
+.login-marketplace{
+    -fx-background-color :  #00bcf0;
+    -fx-text-fill : #ffe556;
+
+}

@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.HomeController">
-   <children>
-      <Label layoutX="185.0" layoutY="148.0" text="Home">
-         <font>
-            <Font name="Trebuchet MS" size="90.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnSair" layoutX="540.0" layoutY="14.0" mnemonicParsing="false" onAction="#aoSair">
-         <font>
-            <Font name="Trebuchet MS" size="11.0" />
-         </font>
-         <graphic>
-            <FontIcon iconLiteral="mdi2e-exit-run" iconSize="32" />
-         </graphic>
-      </Button>
-   </children>
-</AnchorPane>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.HomeController">
+   <left>
+      <VBox styleClass="login-marketplace" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Visualizar Estoque">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2a-archive-eye-outline" iconSize="24" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" text="Entrada de Produtos">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2p-package-variant-closed-plus" iconSize="24" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" text="Relatórios">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2c-clipboard-text-multiple-outline" iconSize="24" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnSair" mnemonicParsing="false" onAction="#aoSair" styleClass="cores-omni-btn" stylesheets="@style.css" text="Sair do sistema">
+               <font>
+                  <Font name="Trebuchet MS" size="11.0" />
+               </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2e-exit-run" iconSize="24" styleClass="cores-omni-pag" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

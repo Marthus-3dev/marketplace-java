@@ -23,21 +23,27 @@
             </Label>
          </children>
       </VBox>
-      <AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #e1ebed;" HBox.hgrow="ALWAYS">
+      <AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="cores-omni-pag" stylesheets="@style.css" HBox.hgrow="ALWAYS">
          <children>
             <Label layoutX="161.0" layoutY="130.0" text="Login" textFill="#c8412d">
                <font>
                   <Font name="Trebuchet MS Bold" size="33.0" />
                </font>
             </Label>
-            <TextField fx:id="usuario" layoutX="128.0" layoutY="214.0" promptText="Usuário" />
-            <Button fx:id="btnAcessar" layoutX="128.0" layoutY="323.0" mnemonicParsing="false" onAction="#aoApertarBotao" prefHeight="23.0" prefWidth="149.0" text="Entrar" textFill="#c8412d">
+            <TextField fx:id="usuario" layoutX="128.0" layoutY="214.0" promptText="Usuário" styleClass="campos-login" stylesheets="@style.css">
+               <font>
+                  <Font name="Trebuchet MS" size="12.0" />
+               </font></TextField>
+            <Button fx:id="btnAcessar" layoutX="123.0" layoutY="325.0" mnemonicParsing="false" onAction="#aoApertarBotao" prefHeight="23.0" prefWidth="149.0" styleClass="cores-omni-btn" stylesheets="@style.css" text="Entrar" textFill="#e1ebed">
                <font>
                   <Font name="Trebuchet MS Bold" size="12.0" />
                </font>
             </Button>
-            <PasswordField fx:id="senha" layoutX="128.0" layoutY="262.0" onAction="#aoApertarBotao" promptText="Senha" />
-            <Label fx:id="esqueceuDados" layoutX="91.0" layoutY="368.0" onMouseClicked="#aoEsquecerSenha" text="Esqueceu sua senha? Recupere aqui" textFill="#c8412d" underline="true">
+            <PasswordField fx:id="senha" layoutX="128.0" layoutY="262.0" onAction="#aoApertarBotao" promptText="Senha" styleClass="campos-login" stylesheets="@style.css">
+               <font>
+                  <Font name="Trebuchet MS" size="12.0" />
+               </font></PasswordField>
+            <Label fx:id="esqueceuDados" layoutX="91.0" layoutY="368.0" onMouseClicked="#aoEsquecerSenha" style="-fx-text-fill: #c8412d;" text="Esqueceu sua senha? Recupere aqui" textFill="#c8412d" underline="true">
                <font>
                   <Font name="Trebuchet MS Italic" size="14.0" />
                </font>
@@ -54,6 +60,9 @@
                   </Text>
                </children></TextFlow>
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </AnchorPane>
    </children>
 </HBox>
