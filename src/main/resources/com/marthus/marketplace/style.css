@@ -4,19 +4,55 @@
     -fx-border-radius : 8;
 }
 
+.esqueceu-senha{
+    -fx-text-fill:#c8412d;
+}
+
+.esqueceu-senha:hover{
+    -fx-text-fill:#e1ebed;
+    -fx-stroke: black;
+    -fx-stroke-width: 10;
+    -fx-scale-x:1.1;
+    -fx-scale-y:1.1;
+}
+
 .cores-omni-btn{
     -fx-background-color : #c8412d;
+    -fx-text-fill: #e1ebed;
     -fx-background-radius : 8;
     -fx-border-radius : 8;
 }
 
-.login-marketplace{
+.cores-omni-btn:hover{
+    -fx-background-color :#e1ebed ;
+    -fx-text-fill: #c8412d;
+    -fx-border-color: #c8412d;
+    -fx-background-radius : 8;
+    -fx-border-radius : 8;
+
+}
+
+
+.login-omni-pag{
     -fx-background-color : #e1ebed;
     -fx-text-fill : #c8412d;
 }
 
-.login-marketplace{
+.login-inv-pag{
     -fx-background-color :  #00bcf0;
     -fx-text-fill : #ffe556;
 
+}
+
+cores-inv-btn:hover{
+    -fx-background-color : #00bcf0;
+    -fx-text-fill : #ffe556;
+}
+
+.cores-inv-btn:hover{
+    -fx-background-color : #00bcf0;
+    -fx-text-fill : #ffe556;
+    -fx-border-color: #00bcf0;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
 }

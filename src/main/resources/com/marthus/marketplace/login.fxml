@@ -14,18 +14,18 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.LoginController">
    <children>
-      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #00bcf0;" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="400.0" styleClass="login-inv-pag" stylesheets="@style.css" HBox.hgrow="ALWAYS">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Marketplace" textFill="#ffe556">
+            <Label alignment="CENTER" contentDisplay="CENTER" styleClass="login-inv-pag" stylesheets="@style.css" text="Marketplace" textFill="#ffe556">
                <font>
                   <Font name="Trebuchet MS Bold" size="45.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="cores-omni-pag" stylesheets="@style.css" HBox.hgrow="ALWAYS">
+      <AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="login-omni-pag" stylesheets="@style.css" HBox.hgrow="ALWAYS">
          <children>
-            <Label layoutX="161.0" layoutY="130.0" text="Login" textFill="#c8412d">
+            <Label layoutX="161.0" layoutY="130.0" styleClass="login-omni-pag" stylesheets="@style.css" text="Login" textFill="#c8412d">
                <font>
                   <Font name="Trebuchet MS Bold" size="33.0" />
                </font>
@@ -43,7 +43,7 @@
                <font>
                   <Font name="Trebuchet MS" size="12.0" />
                </font></PasswordField>
-            <Label fx:id="esqueceuDados" layoutX="91.0" layoutY="368.0" onMouseClicked="#aoEsquecerSenha" style="-fx-text-fill: #c8412d;" text="Esqueceu sua senha? Recupere aqui" textFill="#c8412d" underline="true">
+            <Label fx:id="esqueceuDados" layoutX="91.0" layoutY="368.0" onMouseClicked="#aoEsquecerSenha" styleClass="esqueceu-senha" stylesheets="@style.css" text="Esqueceu sua senha? Recupere aqui" textFill="#c8412d" underline="true">
                <font>
                   <Font name="Trebuchet MS Italic" size="14.0" />
                </font>

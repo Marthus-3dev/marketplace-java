@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeController {
+public class MenuController {
 
     @FXML
     protected void aoSair(ActionEvent event) throws IOException {

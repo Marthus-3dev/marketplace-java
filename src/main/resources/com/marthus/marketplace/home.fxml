@@ -6,8 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.HomeController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.MenuController">
    <left>
       <VBox styleClass="login-marketplace" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
