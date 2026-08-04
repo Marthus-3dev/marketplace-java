@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.marthus.marketplace.controller.RelatorioController"
-            prefHeight="600.0" prefWidth="800.0">
 
-</AnchorPane>
+<VBox minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.RelatorioControler">
+   <children>
+      <HBox>
+         <children>
+            <VBox />
+            <VBox />
+            <VBox />
+         </children>
+      </HBox>
+   </children>
+</VBox>
