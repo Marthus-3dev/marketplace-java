@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class TelaLogin extends Application {
+public class LoginApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(TelaLogin.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 450);
         stage.setTitle("Marketplace - Login");
         stage.setScene(scene);

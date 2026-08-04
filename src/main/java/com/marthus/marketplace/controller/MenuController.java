@@ -1,4 +1,4 @@
-package com.marthus.marketplace;
+package com.marthus.marketplace.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

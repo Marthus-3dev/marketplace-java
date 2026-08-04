@@ -5,4 +5,6 @@ module com.marthus.marketplace {
 
     opens com.marthus.marketplace to javafx.fxml;
     exports com.marthus.marketplace;
+    exports com.marthus.marketplace.controller;
+    opens com.marthus.marketplace.controller to javafx.fxml;
 }

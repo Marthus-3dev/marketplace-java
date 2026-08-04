@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.marthus.marketplace.ProdutoController"
+            fx:controller="com.marthus.marketplace.controller.ProdutoController"
             prefHeight="600.0" prefWidth="800.0">
 
 </AnchorPane>
