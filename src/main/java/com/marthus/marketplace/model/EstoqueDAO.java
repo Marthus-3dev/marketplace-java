@@ -34,4 +34,16 @@ public class EstoqueDAO {
     public void remover(Produto produto){
         listaProdutos.remove(produto);
     }
+
+
+    public double calcularValorTotalEstoque(){
+        return produtosList.stream().mapToDouble(Produto::getValorTotal).sum();
+    }
+
+    public long calcularEstoqueBaixo(int limite){
+        return  produtosList.stream().filter( p -> p.getQuantidade() < limite).count();
+
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package com.marthus.marketplace.controller;
 
+import com.marthus.marketplace.model.UsuarioDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -23,12 +24,16 @@ public class LoginController {
     @FXML
     private TextFlow erroDados;
 
-    private final String usuarioCadastrado = "marthus@admin.adm";
-
-    private final String senhaCadastrada = "admin123";
+    private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
 
     @FXML
     protected void aoApertarBotao(ActionEvent event) throws IOException {
+
+        String usuarioDigitado = usuario.getText().toLowerCase();
+        String senhaDigitada = senha.getText();
+
+        Optional
+
         if (usuarioCadastrado.equalsIgnoreCase(usuario.getText()) && senhaCadastrada.equals(senha.getText())) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
