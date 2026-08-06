@@ -44,10 +44,34 @@
 
 }
 
-cores-inv-btn:hover{
-    -fx-background-color : #00bcf0;
-    -fx-text-fill : #ffe556;
+.menu-inv-pag{
+    -fx-background-color: #ffe556;
+    -fx-text-fill: #00bcf0
 }
+
+.menu-inv-btn{
+    -fx-background-color : #ffe556;
+    -fx-text-fill : #00bcf0;
+    -fx-background-radius : 8;
+    -fx-border-radius : 8;
+}
+
+.menu-inv-btn .menu-icon-color{
+    -fx-icon-color: #00bcf0;
+}
+
+.menu-inv-btn:hover{
+    -fx-background-color :#e1ebed ;
+    -fx-text-fill: #c8412d;
+    -fx-border-color: #c8412d;
+    -fx-background-radius : 8;
+    -fx-border-radius : 8;
+}
+
+.menu-inv-btn:hover .menu-icon-color{
+    -fx-icon-color: #c8412d;
+}
+
 
 .cores-inv-btn:hover{
     -fx-background-color : #00bcf0;
@@ -55,4 +79,8 @@ cores-inv-btn:hover{
     -fx-border-color: #00bcf0;
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
+}
+
+.testa:hover{
+    -fx-fill:#00bcf0
 }
