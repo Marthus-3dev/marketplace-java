@@ -6,12 +6,12 @@ import javafx.collections.ObservableList;
 public class EstoqueDAO {
 
     private static EstoqueDAO instancia;
-    private final ObservableList<Produto> listaProdutos;
+    private final ObservableList<Produto> produtosList;
     private int idProduto = 1;
 
 
     private EstoqueDAO(){
-        this.listaProdutos = FXCollections.observableArrayList();
+        this.produtosList = FXCollections.observableArrayList();
     }
 
 
@@ -24,15 +24,15 @@ public class EstoqueDAO {
 
     public void adicionar(Produto produto){
         produto.setId(idProduto++);
-        listaProdutos.add(produto);
+        produtosList.add(produto);
     }
 
     public ObservableList<Produto> listarProdutos(){
-        return listaProdutos;
+        return produtosList;
     }
 
     public void remover(Produto produto){
-        listaProdutos.remove(produto);
+        produtosList.remove(produto);
     }
 
 
@@ -44,6 +44,9 @@ public class EstoqueDAO {
         return  produtosList.stream().filter( p -> p.getQuantidade() < limite).count();
 
     }
+
+
+
 
 
 }

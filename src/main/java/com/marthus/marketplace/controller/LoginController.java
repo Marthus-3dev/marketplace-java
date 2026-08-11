@@ -1,18 +1,20 @@
 package com.marthus.marketplace.controller;
 
+import com.marthus.marketplace.model.Usuario;
 import com.marthus.marketplace.model.UsuarioDAO;
+import com.marthus.marketplace.util.GerenciadorTela;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class LoginController {
     @FXML
@@ -24,7 +26,7 @@ public class LoginController {
     @FXML
     private TextFlow erroDados;
 
-    private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
+    private final UsuarioDAO bdUsuario =  UsuarioDAO.getInstancia();
 
     @FXML
     protected void aoApertarBotao(ActionEvent event) throws IOException {
@@ -32,22 +34,38 @@ public class LoginController {
         String usuarioDigitado = usuario.getText().toLowerCase();
         String senhaDigitada = senha.getText();
 
-        Optional
+        Optional<Usuario> usuarioEncontrado = bdUsuario.buscarPorEmail(usuarioDigitado);
 
-        if (usuarioCadastrado.equalsIgnoreCase(usuario.getText()) && senhaCadastrada.equals(senha.getText())) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(loader.load());
-            stage.setScene(scene);
-            stage.setTitle("home");
-            stage.show();
+        if ( usuarioEncontrado.isPresent() && usuarioEncontrado.get().getSenha().equals(senhaDigitada)){
 
-        }else{
+            GerenciadorTela.getInstancia().trocarTela(event, "menu.fxml", "Sistema de Estoque - Menu");
+
+        } else {
             erroDados.setVisible(true);
         }
     }
+
+
     @FXML
-    protected void aoEsquecerSenha(){
-        System.out.println("Você esqueceu seu burroide");
+    protected void aoCadastrar(MouseEvent event) throws IOException {
+        GerenciadorTela.getInstancia().trocarTela(event, "cadastro.fxml", "Sistema de Estoque - Cadastro de Usuário");
     }
+
+
+    @FXML
+    protected  void aoEsquecerSenha() throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/marthus/marketplace/enviaEmail.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Sistema de Estoque - Esqueceu a senha");
+        stage.show();
+
+
+
+    }
+
+
+
 }

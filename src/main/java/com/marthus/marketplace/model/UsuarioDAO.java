@@ -28,4 +28,8 @@ public class UsuarioDAO {
     public Optional<Usuario> buscarPorEmail (String email) {
         return bdUsuarios.stream().filter( u -> u.getEmail().equalsIgnoreCase(email)).findFirst();
     }
+
+    public void cadastrarUsuario(Usuario usuario){
+        bdUsuarios.add(usuario);
+    }
 }
