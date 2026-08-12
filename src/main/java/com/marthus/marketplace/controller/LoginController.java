@@ -44,6 +44,19 @@ public class LoginController {
             erroDados.setVisible(true);
         }
     }
+    @FXML
+    protected void aoVerSenha(){
+        senhaVisivelAtiva = !senhaVisivelAtiva;
+
+        senha.setVisible(!senhaVisivelAtiva);
+        senha.setManaged(!senhaVisivelAtiva);
+
+        senhaVisivel.setVisible(senhaVisivelAtiva);
+        senhaVisivel.setManaged(senhaVisivelAtiva);
+
+        iconeOlho.setIconLiteral(senhaVisivelAtiva ? "mdi2e-eye" : "mdi2e-eye-off");
+
+    }
 
 
     @FXML

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.RelatorioControler">
+<VBox minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.controller.RelatorioController">
    <children>
       <HBox>
          <children>

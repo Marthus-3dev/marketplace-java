@@ -37,8 +37,6 @@ public class EnviarEmailController {
             emailNaoCadastrado.setVisible(true);
             return;
         }
-
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/marthus/marketplace/codigoConfirmacao.fxml"));
         Parent root = fxmlLoader.load();
 

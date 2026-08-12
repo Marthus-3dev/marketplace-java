@@ -7,10 +7,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marthus.marketplace.controller.LoginController">
    <children>
@@ -39,10 +41,6 @@
                   <Font name="Trebuchet MS Bold" size="12.0" />
                </font>
             </Button>
-            <PasswordField fx:id="senha" layoutX="128.0" layoutY="262.0" onAction="#aoApertarBotao" promptText="Senha" styleClass="campos-login" stylesheets="@style.css">
-               <font>
-                  <Font name="Trebuchet MS" size="12.0" />
-               </font></PasswordField>
             <Label fx:id="esqueceuDados" layoutX="91.0" layoutY="368.0" onMouseClicked="#aoEsquecerSenha" styleClass="esqueceu-senha" stylesheets="@style.css" text="Esqueceu sua senha? Recupere aqui" textFill="#c8412d" underline="true">
                <font>
                   <Font name="Trebuchet MS Italic" size="14.0" />
@@ -59,6 +57,21 @@
                      </font>
                   </Text>
                </children></TextFlow>
+            <StackPane layoutX="127.0" layoutY="198.0" prefHeight="150.0" prefWidth="139.0">
+               <children>
+                  <TextField fx:id="senhaVisivel" styleClass="campos-login" stylesheets="@style.css">
+                     <font>
+                        <Font name="Trebuchet MS" size="12.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="senha" onAction="#aoApertarBotao" promptText="Senha" styleClass="campos-login" stylesheets="@style.css">
+                     <font>
+                        <Font name="Trebuchet MS" size="12.0" />
+                     </font>
+                  </PasswordField>
+                  <FontIcon iconLiteral="mdi2c-clipboard-text-multiple-outline" wrappingWidth="19.0" StackPane.alignment="CENTER_RIGHT" />
+               </children>
+            </StackPane>
          </children>
          <opaqueInsets>
             <Insets />
