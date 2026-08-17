@@ -3,6 +3,7 @@ package com.marthus.marketplace.controller;
 import com.marthus.marketplace.model.EstoqueDAO;
 import com.marthus.marketplace.model.Produto;
 import com.marthus.marketplace.util.GerenciadorTela;
+import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +12,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class EstoqueController {
@@ -42,12 +45,13 @@ public class EstoqueController {
     @FXML
     public void initialize(){
 
+        tabelaProdutos.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         NumberFormat moedaFormatada = NumberFormat.getCurrencyInstance(new Locale("pr", "BR"));
         colunaId.setCellValueFactory( new PropertyValueFactory<>("id"));
         colunaNome.setCellValueFactory( new PropertyValueFactory<>("nome"));
         colunaCategoria.setCellValueFactory( new PropertyValueFactory<>("categoria"));
         colunaQuantidade.setCellValueFactory( new PropertyValueFactory<>("quantidade"));
-        colunaPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        colunaPreco.setCellValueFactory(new PropertyValueFactory<>("preço"));
 
         listaFiltrada = new FilteredList<>( dadosEstoque.listarProdutos(), p -> true);
         tabelaProdutos.setItems(listaFiltrada);
@@ -88,20 +92,26 @@ public class EstoqueController {
 
     @FXML
     protected void removerProduto(){
-        Produto produtoSelecionado = (Produto) tabelaProdutos.getSelectionModel().getSelectedItem();
-        if( produtoSelecionado == null){
+        ObservableList produtoSelecionado = tabelaProdutos.getSelectionModel().getSelectedItems();
+        if( produtoSelecionado.isEmpty()) {
             mostrarAlerta("Selecione um produto para remover !");
             return;
         }
 
-        Alert confirmacao = new Alert(Alert.AlertType.CONFIRMATION, "Remover o produto "+ produtoSelecionado.getNome() + " do estoque? ");
+        List<Produto> listaProduto = new ArrayList<>(produtoSelecionado);
+        String produtosExcluidos = "";
+        for (Produto p : listaProduto){
+            produtosExcluidos += p.getId() +" " + p.getNome()+"\n";
+        }
+
+        Alert confirmacao = new Alert(Alert.AlertType.CONFIRMATION, "Remover o produto "+ produtosExcluidos + "\n do estoque? ");
         confirmacao.setHeaderText(null);
         ButtonType btnSim = new ButtonType("Sim");
         ButtonType btnNao = new ButtonType("Não");
         confirmacao.getButtonTypes().setAll(btnSim, btnNao);
         confirmacao.showAndWait().ifPresent( botao -> {
             if ( botao == btnSim){
-                dadosEstoque.remover(produtoSelecionado);
+                dadosEstoque.remover(listaProduto);
             }
         });
     }

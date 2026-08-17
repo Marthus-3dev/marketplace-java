@@ -4,6 +4,12 @@
     -fx-border-radius : 8;
 }
 
+.campos-cadastro{
+    -fx-border-color :  black;
+    -fx-background-radius : 8   ;
+    -fx-border-radius : 8;
+}
+
 .esqueceu-senha{
     -fx-text-fill:#c8412d;
 }
@@ -57,8 +63,8 @@
 }
 
 .menu-inv-btn .menu-icon-color{
-    -fx-icon-color: #00bcf0;
-}
+        -fx-icon-color: #00bcf0;
+    }
 
 .menu-inv-btn:hover{
     -fx-background-color :#e1ebed ;

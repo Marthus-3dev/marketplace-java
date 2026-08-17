@@ -3,6 +3,8 @@ package com.marthus.marketplace.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.List;
+
 public class EstoqueDAO {
 
     private static EstoqueDAO instancia;
@@ -31,8 +33,8 @@ public class EstoqueDAO {
         return produtosList;
     }
 
-    public void remover(Produto produto){
-        produtosList.remove(produto);
+    public void remover(List<Produto> listProdutos){
+        produtosList.removeAll(listProdutos);
     }
 
 
